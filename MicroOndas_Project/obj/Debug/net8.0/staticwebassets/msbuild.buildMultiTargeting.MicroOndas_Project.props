@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MicroOndas_Project.props" />
+</Project>

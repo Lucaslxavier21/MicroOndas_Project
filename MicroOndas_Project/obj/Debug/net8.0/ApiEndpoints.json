@@ -1,0 +1,49 @@
+[
+  {
+    "ContainingType": "MicroOndas_Project.Controllers.ProgramaApiController",
+    "Method": "CadastrarPrograma",
+    "RelativePath": "api/ProgramaApi/cadastrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "programa",
+        "Type": "MicroOndas_Project.Models.ProgramaModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MicroOndas_Project.Controllers.ProgramaApiController",
+    "Method": "IniciarAquecimento",
+    "RelativePath": "api/ProgramaApi/iniciarAquecimento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tempo",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "potencia",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MicroOndas_Project.Controllers.ProgramaApiController",
+    "Method": "ListarProgramas",
+    "RelativePath": "api/ProgramaApi/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

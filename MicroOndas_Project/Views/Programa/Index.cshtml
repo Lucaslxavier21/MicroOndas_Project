@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ProgramaModel>
+
+<h2>Programas de Aquecimento</h2>
+<div class="mb-3">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastrarProgramaModal">
+        Cadastrar Novo Programa
+    </button>
+</div>
+<table class="table-striped table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Alimento</th>
+            <th>Tempo</th>
+            <th>Potência</th>
+            <th>Instruções</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var programa in Model)
+            {
+                <tr>
+                    <td>@programa.Nome</td>
+                    <td>@programa.Alimento</td>
+                    <td>@programa.Tempo</td>
+                    <td>@programa.Potencia</td>
+                    <td>@programa.Instrucoes</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="cadastrarProgramaModal" tabindex="-1" aria-labelledby="cadastrarProgramaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cadastrarProgramaModalLabel">Cadastrar Novo Programa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="cadastrarProgramaForm" method="post" action="@Url.Action("AdicionarPrograma", "Programa")">
+                    <div class="form-group mb-3">
+                        <label for="Nome">Nome:</label>
+                        <input type="text" name="Nome" id="Nome" class="form-control" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Alimento">Alimento:</label>
+                        <input type="text" name="Alimento" id="Alimento" class="form-control" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Tempo">Tempo (segundos):</label>
+                        <input type="number" name="Tempo" id="Tempo" class="form-control" min="1" max="120" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Potencia">Potência:</label>
+                        <input type="number" name="Potencia" id="Potencia" class="form-control" min="1" max="10" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Caractere">Caractere:</label>
+                        <input type="text" name="Caractere" id="Caractere" class="form-control" maxlength="1" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="Instrucoes">Instruções:</label>
+                        <textarea name="Instrucoes" id="Instrucoes" class="form-control"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
